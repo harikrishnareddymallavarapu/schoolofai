@@ -18,6 +18,6 @@ The loss is the error that has been made by the neural network model. Its the pe
 The chain rule of differentiation leads to Gradient flow rule. 	
 The chain rule is a formula to compute the derivative of a composite function. For example if variable z depends on y which itself depends on variable x then z is also dependent on x via the intermediate variable.
 In this case the chain rule states that
-{\frac  {dz}{dx}}={\frac  {dz}{dy}}\cdot {\frac  {dy}{dx}}.
+dz/dx = dz/dy * dy/dx
 
 In deep learning the input of a any layer is dependent on its previous layer (except input layer) which leads to a composite function at the output. The gradient calculated at the end is traversed back to the hidden layers using the chain rule principle to update the weights there by enabling the training of the network.  

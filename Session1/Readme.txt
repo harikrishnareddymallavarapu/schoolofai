@@ -1,4 +1,4 @@
-<b>1. What is a neural network neuron?</b>
+1. What is a neural network neuron?
 Neuron is a fundamental unit in a neural network model. It is nothing but a set of inputs, set of weights and an activation function. It does a weighted opertaion on the inputs it receives and applies an activation fucntion to generate a linear or non-linear output. Neural networks are collection of neurons connected in layers and each neuron generally captures characteristics and patterns of the inputs which is difficult to do in a normal fetaure engineering process.
 
 2. What is the use of the learning rate?

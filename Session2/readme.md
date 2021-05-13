@@ -6,7 +6,7 @@
 ![image](https://user-images.githubusercontent.com/24980224/118105606-378b3d00-b3fa-11eb-8ab0-ff6fd5f76db3.png)
 
 ### Training of network in Excel
-![image](https://user-images.githubusercontent.com/24980224/118105669-4bcf3a00-b3fa-11eb-8131-887fd874f6e8.png)
+![image](https://user-images.githubusercontent.com/24980224/118106025-c8621880-b3fa-11eb-854d-896fa4a4c0f0.png)
 
 ## Drop in error rates at different Learning Rates
 

@@ -8,7 +8,7 @@
 ### Training of network in Excel
 ![image](https://user-images.githubusercontent.com/24980224/118106281-0f500e00-b3fb-11eb-9daf-135fb278a0b1.png)
 
-## Drop in error rates at different Learning Rates
+## Drop in error at different Learning Rates
 
 ![image](https://user-images.githubusercontent.com/24980224/118105293-d4010f80-b3f9-11eb-9323-c1a70f2d4664.png)
 

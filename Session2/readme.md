@@ -11,7 +11,7 @@
 ## Drop in error at different Learning Rates
 <img src="https://user-images.githubusercontent.com/24980224/118105293-d4010f80-b3f9-11eb-9323-c1a70f2d4664.png" width="400" height="300"/>
 
-![image](https://user-images.githubusercontent.com/24980224/118105293-d4010f80-b3f9-11eb-9323-c1a70f2d4664.png)
+Here it can be noticed that the rate at which the error has decreased is faster in this example with the increase in the learning rate. Generally, it is preferred to keep the learning rate < 1   
 
 ## Below is the explanation of the model
 

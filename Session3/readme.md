@@ -40,7 +40,19 @@ when we access the class we get 4 values, the first one is a image matrix and th
 
 **Neural Network**
 ## Building the Neural Network Model
-The Model takes 2 inputs and generates 2 outputs
+The Model takes 2 inputs and generates 2 outputs and the model is trained on GPU. If GPU is not available the network will be switched to CPU device 
+
+Below is the code to check if GPU is available or not
+
+```
+if torch.cuda.is_available():
+    device = torch.device("cuda:0")  # you can continue going on here, like cuda:1 cuda:2....etc. 
+    print("Running on the GPU")
+else:
+    device = torch.device("cpu")
+    print("Running on the CPU")
+```
+
 
 Below are the steps on how the network processes the data in different layers
 

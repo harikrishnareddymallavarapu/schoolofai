@@ -95,6 +95,16 @@ NetworkModel(
 ```
 ## Training the Model
 
+Below is the script for accessing the train dataset using torch DataLoader which gets data from the custom dataset in batch size of 32 
+
+```
+batchSize = 32
+dataset = MNISTAndRandomBinaryNumbers(train_set)
+train_loader = torch.utils.data.DataLoader(dataset
+    ,batch_size=batchSize 
+    ,shuffle=True
+)
+```
 Following are the Hyperparameters that has been used for the training
 
 1. Stochastic Gradient Descent Optimization technique has been used for training the model with learning rate of 0.001 and momentum 0.9
@@ -113,11 +123,12 @@ Below is the decrease in the error with each epoch
 
 ![image](https://user-images.githubusercontent.com/24980224/119090165-e3e7a780-ba28-11eb-9394-6ef6c5172d93.png)
 
-## Testing the accuracy of the model
+### Testing the accuracy of the model
 
 1. The test data split from MNIST has been used to create a new test dataset
 2. The trained model is used for prediciting the labels of the images and also sum of the (image label and random number)
 3. The predictions are evaluated against the original labels in the test dataset. 
 4. Individual accuracies for image and random number sum are calculated by diving the right predictions with total records in the dataset
 5. Combined accuracy where both are correctly predicted is also calculated 
+
 

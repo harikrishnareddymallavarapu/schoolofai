@@ -11,12 +11,14 @@ Gives two outputs:
 ------------------------------------------------------------------------------------------------
 ## Approach
 
-**Step 1: Creation of Custom Dataset to include image labels and random numbers**
+**Creation of Custom Dataset to include image labels and random numbers**
 1. MNIST from torch datastes is downlaoded and splitted to train and test sets
 ```
   train_set, val_set = torch.utils.data.random_split(dataset, [50000, 10000])
 ```
 2. Custom Data class is created to generate the data required for the problem. The __getitem__() and __len__() functions are implemented in the class. Each record in the MNIST dataset is appened with random number and sum of the label and the random number is considered as the output label 
+
+Below code clip shows how the random numbers and MNIST dataset are appeneded in the class
 
 ```
 class MNISTAndRandomBinaryNumbers(Dataset):
@@ -36,6 +38,7 @@ class MNISTAndRandomBinaryNumbers(Dataset):
 
 when we access the class we get 4 values, the first one is a image matrix and the second input is a one hot represented random number. The random number in the range of (0,9) is generated using the torch.randint method and its converted to one-hot vector representation. The other 2 are labels related to image class and random number 
 
+**Neural Network**
 ## Building the Neural Network Model
 The Model takes 2 inputs and generates 2 outputs
 
@@ -51,23 +54,70 @@ In this design we pass the first input in layer1 and the second input is appende
 3. The output of the layer 1 is taken as input to second convolution layer which has a kernel size of 5 and out channels as 12. The 6 input tensors of size 1x12x12 is converted to 12 features of size 1x8x8.
 4. The output of the second layer convolution operation is passed to a Relu activation and to a max pool layer with kernel 2 and stride 2. Each feature of 1x12x12 is max pooled to size 1x4x4
 
-### Layer 3 
-5. The 12 features from output of layer 2 is flattened to [1, 192] tensor and the second input is concatenated to this output. This concatenated tensor acts as input to layer 3
-6. The layer 3 takes 1x202 vector as input and generates 120 features as output
-7. weighted input of layer 3 neurons are passed through relu activation function
+### Layer 3.a
+5. The second input is passed as input to this layer. This layer takes 1x10 as input and generates 1xsizeDefinedByuser (passed as parameter to the model, here it is 30) as the output
+6. This output is passed through a Relu activation layer
+
+### Layer 3.b 
+7. The 12 features from output of layer 2 is flattened to [1, 192] tensor and the second input is concatenated to this output. This concatenated tensor acts as input to layer 3
+8.The layer 3 takes 1x222 vector as input and generates 120 features as output
+9. weighted input of layer 3.b neurons are passed through relu activation function
 
 ### Layer 4
-8. The layer 3 takes 1x120 vector as input and generates 1x60 features as output
-9. The weighted input of layer 4 neurons are passed through relu activation function
+10. The layer 3 takes 1x120 vector as input and generates 1x60 features as output
+11. The weighted input of layer 4 neurons are passed through relu activation function
 
 ### Layer 5
-10. The layer 4 takes 1x60 vector as input and generates 1x45 features as output
-11. The weighted input of layer 5 neurons are passed through relu activation function
+12. The layer 4 takes 1x60 vector as input and generates 1x45 features as output
+13. The weighted input of layer 5 neurons are passed through relu activation function
 
 ### Layer 6 - Output 1
 14. The layer 5 takes 1x45 vector as input and generates 1x10 features as output
 15. The output of the layer 6 is passed through softmax function to generate the probabilites of the class 
 
 ### Layer 7 - Output 2
-14. The layer 5 takes 1x45 vector as input and generates 1x19 features as output
-15. The output of the layer 7 is passed through softmax function to generate the probabilites of the class 
+16. The layer 5 takes 1x45 vector as input and generates 1x19 features as output
+17. The output of the layer 7 is passed through softmax function to generate the probabilites of the class 
+
+
+```
+NetworkModel(
+  (conv1): Conv2d(1, 6, kernel_size=(5, 5), stride=(1, 1))
+  (conv2): Conv2d(6, 12, kernel_size=(5, 5), stride=(1, 1))
+  (fc0): Linear(in_features=10, out_features=30, bias=True)
+  (fc1): Linear(in_features=222, out_features=120, bias=True)
+  (fc2): Linear(in_features=120, out_features=60, bias=True)
+  (fc3): Linear(in_features=60, out_features=45, bias=True)
+  (out1): Linear(in_features=45, out_features=10, bias=True)
+  (out2): Linear(in_features=45, out_features=19, bias=True)
+)
+
+```
+## Training the Model
+
+Following are the Hyperparameters that has been used for the training
+
+1. Stochastic Gradient Descent Optimization technique has been used for training the model with learning rate of 0.001 and momentum 0.9
+
+2. Cross entropy loss has been used for calculating the loss for both the outputs as the model generates probability distribution of the classes. Cross entropy generates high loss value when the model deviates from the actual prediction and generates small loss when the prediction is close.
+
+3. The loss generated by both the outputs has been added to create a single loss and this has been used for gradient and back propagations. I have tried different by giving different weights to the losses but there is not much improvement in the model performance
+
+4. Model is trained for 100 epochs. Under each epoch, the model is trained for every batch of 32 records and the weights are updated by calculating the loss at the end of each batch processing.
+
+Below is the sreenshot of the training of the model
+
+![image](https://user-images.githubusercontent.com/24980224/119090077-c4507f00-ba28-11eb-8e18-e9a2a2cff961.png)
+
+Below is the decrease in the error with each epoch
+
+![image](https://user-images.githubusercontent.com/24980224/119090165-e3e7a780-ba28-11eb-9394-6ef6c5172d93.png)
+
+## Testing the accuracy of the model
+
+1. The test data split from MNIST has been used to create a new test dataset
+2. The trained model is used for prediciting the labels of the images and also sum of the (image label and random number)
+3. The predictions are evaluated against the original labels in the test dataset. 
+4. Individual accuracies for image and random number sum are calculated by diving the right predictions with total records in the dataset
+5. Combined accuracy where both are correctly predicted is also calculated 
+

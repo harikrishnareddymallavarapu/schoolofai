@@ -131,9 +131,13 @@ Below is the sreenshot of the training of the model
 
 ![image](https://user-images.githubusercontent.com/24980224/119090077-c4507f00-ba28-11eb-8e18-e9a2a2cff961.png)
 
-Below is the decrease in the error with each epoch
+Below is the decrease in the error with each epoch (learning rate =0.001)
 
 ![image](https://user-images.githubusercontent.com/24980224/119090165-e3e7a780-ba28-11eb-9394-6ef6c5172d93.png)
+
+Below is the decrease in error with each epoch (learning rate =0.01)
+![image](https://user-images.githubusercontent.com/24980224/119123786-93367580-ba4d-11eb-8f13-e87b8f646211.png)
+
 
 ### Testing the accuracy of the model
 
@@ -143,9 +147,16 @@ Below is the decrease in the error with each epoch
 4. Individual accuracies for image and random number sum are calculated by diving the right predictions with total records in the dataset
 5. Combined accuracy where both are correctly predicted is also calculated 
 
+Below is the accuracy of the model having a learning rate of 0.001
 * The Combined accuracy of the model is 38.75%
 * Image Label prediction accuracy is 98.35%
 * Random Sum prediction accuracy is 38.97%
+
+
+Below is the accuracy of the model having a learning rate of 0.01 while the rest all being same
+* The Combined accuracy of the model is 54.8%
+* Image Label prediction accuracy is 98.97%
+* Random Sum prediction accuracy is 55.07%
 
 ### Improvements that can be made
 

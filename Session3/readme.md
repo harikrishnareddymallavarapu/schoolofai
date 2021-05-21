@@ -71,25 +71,25 @@ In this design we pass the first input in layer1 and the second input is appende
 6. This output is passed through a Relu activation layer
 
 ### Layer 3.b 
-7. The 12 features from output of layer 2 is flattened to [1, 192] tensor and the second input is concatenated to this output. This concatenated tensor acts as input to layer 3
+7. The 12 features from output of layer 2 is flattened to [1, 192] tensor and the second input is concatenated to this output. This concatenated tensor acts as input to layer 3.b
 8.The layer 3 takes 1x222 vector as input and generates 120 features as output
 9. weighted input of layer 3.b neurons are passed through relu activation function
 
 ### Layer 4
-10. The layer 3 takes 1x120 vector as input and generates 1x60 features as output
+10. The layer 4 takes 1x120 vector as input and generates 1x60 features as output
 11. The weighted input of layer 4 neurons are passed through relu activation function
 
 ### Layer 5
-12. The layer 4 takes 1x60 vector as input and generates 1x45 features as output
+12. The layer 5 takes 1x60 vector as input and generates 1x45 features as output
 13. The weighted input of layer 5 neurons are passed through relu activation function
 
 ### Layer 6 - Output 1
-14. The layer 5 takes 1x45 vector as input and generates 1x10 features as output
+14. The layer 6 takes 1x45 vector as input and generates 1x10 features as output
 15. The output of the layer 6 is passed through softmax function to generate the probabilites of the class 
 
 ### Layer 7 - Output 2
-16. The layer 5 takes 1x45 vector as input and generates 1x19 features as output
-17. The output of the layer 7 is passed through softmax function to generate the probabilites of the class 
+16. The layer 7 takes 1x45 vector as input and generates 1x19 features as output (sum ranges from 0 to 18, so 19 is selected as the output )
+17. The output of the layer 7 is passed through softmax function to generate the probabilites of the sum of the random number class 
 
 
 ```

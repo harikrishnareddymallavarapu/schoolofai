@@ -135,7 +135,9 @@ Below is the decrease in the error with each epoch (learning rate =0.001)
 
 ![image](https://user-images.githubusercontent.com/24980224/119090165-e3e7a780-ba28-11eb-9394-6ef6c5172d93.png)
 
+
 Below is the decrease in error with each epoch (learning rate =0.01)
+
 ![image](https://user-images.githubusercontent.com/24980224/119123786-93367580-ba4d-11eb-8f13-e87b8f646211.png)
 
 

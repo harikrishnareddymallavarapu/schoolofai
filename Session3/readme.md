@@ -131,4 +131,7 @@ Below is the decrease in the error with each epoch
 4. Individual accuracies for image and random number sum are calculated by diving the right predictions with total records in the dataset
 5. Combined accuracy where both are correctly predicted is also calculated 
 
+The Combined accuracy of the model is 38.75%
+Image Label prediction accuracy is 98.35%
+Random Sum prediction accuracy is 38.97%
 

@@ -1,7 +1,40 @@
-Creating Custom dataset to include random numbers and generate labels which is sum of the random number and the image label
-Here we have 2 inputs, the first one is a image matrix and the second input is a random number. The random number in the range of (0,9) is generated using the torch.randint method and its converted to one-hot vector representation
+## Problem
+Write a neural network that can:
 
-The desired output is to get the image label as one output and the other output is to get the sum of the random number and the image label. Output2 is converted to one-hot representation as we know from the problem that the min and max values would be in the range 0 to 18
+Take 2 inputs:
+ * an image from MNIST dataset, and
+ * a random number between 0 and 9
+
+Gives two outputs:
+ * the "number" that was represented by the MNIST image, and
+ * the "sum" of this number with the random number that was generated and sent as the input to the network
+------------------------------------------------------------------------------------------------
+## Approach
+
+**Step 1: Creation of Custom Dataset to include image labels and random numbers**
+1. MNIST from torch datastes is downlaoded and splitted to train and test sets
+```
+  train_set, val_set = torch.utils.data.random_split(dataset, [50000, 10000])
+```
+2. Custom Data class is created to generate the data required for the problem. The __getitem__() and __len__() functions are implemented in the class. Each record in the MNIST dataset is appened with random number and sum of the label and the random number is considered as the output label 
+
+```
+class MNISTAndRandomBinaryNumbers(Dataset):
+  
+  def __init__(self, mnistDataset):
+    self.data = []
+
+    lengthOfDataset = len(mnistDataset)
+    randomNumbers = torch.randint(0,9,(lengthOfDataset,))
+    for i in range(lengthOfDataset):
+      test = list(mnistDataset[i])
+      test.append(self.getOneHotRepresentation(0,9,randomNumbers[i]))
+      #test.append(self.getOneHotRepresentation(0,18,test[1]+randomNumbers[i]))
+      test.append((torch.Tensor([test[1]+randomNumbers[i]])).type(torch.LongTensor))
+      self.data.append(tuple(test))```
+```
+
+when we access the class we get 4 values, the first one is a image matrix and the second input is a one hot represented random number. The random number in the range of (0,9) is generated using the torch.randint method and its converted to one-hot vector representation. The other 2 are labels related to image class and random number 
 
 ## Building the Neural Network Model
 The Model takes 2 inputs and generates 2 outputs

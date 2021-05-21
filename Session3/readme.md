@@ -147,3 +147,15 @@ Below is the decrease in the error with each epoch
 * Image Label prediction accuracy is 98.35%
 * Random Sum prediction accuracy is 38.97%
 
+### Improvements that can be made
+
+The overall loss of the model is high and the accuracies are low, we can try the following methods to improve the model accuracies
+
+1. Train for more number of epochs to further fit the model.
+2. Increase the depth of the network by adding more additional layers
+3. Increase the learning rate to increase the gradient updates
+4. Image labels accuracies are very high, may be penalizing the features related to image or by providing additional weightage to the features related to randomsum
+5. Switch the optimization from SGD to Adam may help in reducing the error or finding the optimal loss 
+
+
+

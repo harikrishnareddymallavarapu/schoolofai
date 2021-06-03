@@ -6,3 +6,8 @@
 
 
 ## Approach
+
+1. Loaded the train, test and validation datasets from pytreebank package into dataframes. Each of it has a sentence and a label [0-4 range] and below are their shapes  
+![image](https://user-images.githubusercontent.com/24980224/120672755-3658a780-c4b0-11eb-8a6c-0e02109c6864.png)
+
+

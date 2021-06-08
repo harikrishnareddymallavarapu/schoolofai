@@ -54,16 +54,5 @@ Validation Accuracy
 
 
 12. Below is the predictions made by the model on some of the test records
- 
-sentence	labels	prediction
-a masterful film from a master filmmaker , unique in its deceptive grimness , compelling in its fatalist worldview .	4	3
-light , cute and forgettable .	2	0
-if there 's a way to effectively teach kids about the dangers of drugs , i think it 's in projects like the ( unfortunately r-rated ) paid .	3	0
-while it would be easy to give crush the new title of two weddings and a funeral , it 's a far more thoughtful film than any slice of hugh grant whimsy .	3	2
-though everything might be literate and smart , it never took off and always seemed static .	1	1
-cantet perfectly captures the hotel lobbies , two-lane highways , and roadside cafes that permeate vincent 's days	3	3
-ms. fulford-wierzbicki is almost spooky in her sulky , calculating lolita turn .	3	1
-though it is by no means his best work , laissez-passer is a distinguished and distinctive effort by a bona-fide master , a fascinating film replete with rewards to be had by all willing to make the effort to reap them .	3	3
-like most bond outings in recent years , some of the stunts are so outlandish that they border on being cartoonlike .	1	1
-a heavy reliance on cgi technology is beginning to creep into the series .	2	1
+
 ![image](https://user-images.githubusercontent.com/24980224/121213762-2835cd00-c89c-11eb-9745-68191ccf4e3b.png)

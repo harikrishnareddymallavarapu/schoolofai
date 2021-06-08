@@ -26,20 +26,28 @@
 7. Post the embedding layer, the embedding vectors are passed to LSTM layer and 2 fully connected Linear layers
 8. Adam optimizer has been used and Cross entropy loss is used as the loss function
 9. The network has been trained for 200 epochs below are the training logs
-![image](https://user-images.githubusercontent.com/24980224/121194543-7511a780-c88c-11eb-9ab4-be44f440cfe0.png)
+![image](https://user-images.githubusercontent.com/24980224/121204128-4ac3e800-c894-11eb-8c81-7416d2f066a6.png)
+
 
 10. Below is training  loss and validation loss
 
 Training Loss
 
-![image](https://user-images.githubusercontent.com/24980224/121194646-8fe41c00-c88c-11eb-996e-830bb41321d6.png)
+![image](https://user-images.githubusercontent.com/24980224/121204259-64fdc600-c894-11eb-9cae-46cb3b7354f3.png)
 
 Validation Loss
 
-![image](https://user-images.githubusercontent.com/24980224/121194728-a12d2880-c88c-11eb-9a40-ad5a5aef1f94.png)
+![image](https://user-images.githubusercontent.com/24980224/121204284-6af3a700-c894-11eb-8537-1a9fd919524a.png)
+
+Training Accuracy
+
+![image](https://user-images.githubusercontent.com/24980224/121204364-78109600-c894-11eb-98a3-721704e58810.png)
+
+
+Validation Accuracy
+
+![image](https://user-images.githubusercontent.com/24980224/121204414-7f37a400-c894-11eb-8762-ca97685ecc35.png)
 
 11. When tested on test dataset below are the accuracy and loss values that the model has generated
-
-
 12. Below is the predictions made by the model on some of the test records
  

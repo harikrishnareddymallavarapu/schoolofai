@@ -31,9 +31,11 @@
 10. Below is training  loss and validation loss
 
 Training Loss
+
 ![image](https://user-images.githubusercontent.com/24980224/121194646-8fe41c00-c88c-11eb-996e-830bb41321d6.png)
 
 Validation Loss
+
 ![image](https://user-images.githubusercontent.com/24980224/121194728-a12d2880-c88c-11eb-9a40-ad5a5aef1f94.png)
 
 11. When tested on test dataset below are the accuracy and loss values that the model has generated

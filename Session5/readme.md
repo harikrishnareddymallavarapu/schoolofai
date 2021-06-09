@@ -10,12 +10,14 @@
 ## Solution
 
 1. Loaded the train, test and validation datasets from pytreebank package into dataframes. Each of it has a sentence and a label [0-4 range] and below are their shapes  
-![image](https://user-images.githubusercontent.com/24980224/121327443-12261c00-c931-11eb-951c-dbdacac6f38c.png)
 
 2. Augmentation techniques Translate, Random Swap and Random Delete are applied on the dataset. 
     Translate : Randomly selected sentences from the train dataset are translated to a different language and they are retranslated back to english sentences
     Random Delete: Random words are deleted from a random set of sentences
     Random Swap: Randomly selected words in a sentence are swapped and this is performed n times in each sentence and this is performed for a random set of sentences
+    Post augmentation below is the details of the dataset sizes and only the train dataste is augemented and the rest all remains the same
+    ![image](https://user-images.githubusercontent.com/24980224/121327692-4c8fb900-c931-11eb-8a41-d6debb0abc7b.png)
+
 
 3. Sentences are tokenized using spacy and are converted to lower case 
 4. The dataset has been converted to iterators using BucketIterator with a batch size of 32

@@ -10,7 +10,7 @@
 ## Solution
 
 1. Loaded the train, test and validation datasets from pytreebank package into dataframes. Each of it has a sentence and a label [0-4 range] and below are their shapes  
-![image](https://user-images.githubusercontent.com/24980224/120672755-3658a780-c4b0-11eb-8a6c-0e02109c6864.png)
+![image](https://user-images.githubusercontent.com/24980224/121327443-12261c00-c931-11eb-951c-dbdacac6f38c.png)
 
 2. Augmentation techniques Translate, Random Swap and Random Delete are applied on the dataset. 
     Translate : Randomly selected sentences from the train dataset are translated to a different language and they are retranslated back to english sentences

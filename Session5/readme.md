@@ -9,6 +9,7 @@
 
 ## Solution
 
+
 1. Loaded the train, test and validation datasets from pytreebank package into dataframes. Each of it has a sentence and a label [0-4 range] and below are their shapes  
 
 2. Augmentation techniques Translate, Random Swap and Random Delete are applied on the dataset. 
@@ -16,6 +17,7 @@
     Random Delete: Random words are deleted from a random set of sentences
     Random Swap: Randomly selected words in a sentence are swapped and this is performed n times in each sentence and this is performed for a random set of sentences
     Post augmentation below is the details of the dataset sizes and only the train dataste is augemented and the rest all remains the same
+    
     ![image](https://user-images.githubusercontent.com/24980224/121327692-4c8fb900-c931-11eb-8a41-d6debb0abc7b.png)
 
 
@@ -58,3 +60,6 @@ Validation Accuracy
 12. Below is the predictions made by the model on some of the test records
 
 ![image](https://user-images.githubusercontent.com/24980224/121213762-2835cd00-c89c-11eb-9745-68191ccf4e3b.png)
+
+
+Note: Please check Session_2.ipynb for data augmentation steps and Session_3 has model training steps
